@@ -10,11 +10,18 @@ import { products } from '../products';
 export class ProductListComponent {
   products = products;
 
-  share() {
-    window.alert('The product has been shared!');
+  share(id:number) {
+    for (let product of products) {
+      if(product.id == id) {
+        const product_url = product.url + '';
+        const text = product.name;
+        const url = 'https://t.me/share/url?url=' + encodeURIComponent(product_url) + '&text=' + encodeURIComponent(text);
+        window.open(url, '_blank');
+        break;
+      }
+    }
   }
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.

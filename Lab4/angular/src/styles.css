@@ -31,12 +31,16 @@ h2 {
   font-size: 20px;
 }
 
+h3 {
+  font-size: 24px;
+}
+
 h1, h2 {
   font-weight: lighter;
 }
 
 p {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* Hyperlink */
@@ -137,9 +141,13 @@ app-top-bar h1 {
   background-color: #EEEEEE;
 }
 
+img {
+  margin-left: 0;
+  max-height: 100px;
+}
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
-*/
+ */
