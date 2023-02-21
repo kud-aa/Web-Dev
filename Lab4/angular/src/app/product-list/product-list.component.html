@@ -3,7 +3,7 @@
 <div *ngFor="let product of products">
 
   <h3>
-    <a [title]="product.name + ' details'" [href]="product.url">
+    <a [title]="product.name + ' details'" [href]="product.url" target="_blank">
       {{ product.name }}
     </a>
   </h3>
@@ -14,11 +14,11 @@
   </p>
 
   <p *ngIf="product.price">
-    Price: {{ product.price }} ₸
+    Price: {{ product.price | number:'1.0-2' }} ₸
   </p>
 
   <p *ngIf="product.rating">
-    Rating: {{ product.rating }} / 5
+    Rating: {{ product.rating | number:'1.2' }} / 5.00
   </p>
 
   <button type="button" (click)="share(product.id)">
