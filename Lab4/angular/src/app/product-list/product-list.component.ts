@@ -11,15 +11,9 @@ export class ProductListComponent {
   products = products;
 
   share(id:number) {
-    for (let product of products) {
-      if(product.id == id) {
-        const product_url = product.url + '';
-        const text = product.name;
-        const url = 'https://t.me/share/url?url=' + encodeURIComponent(product_url) + '&text=' + encodeURIComponent(text);
-        window.open(url, '_blank');
-        break;
-      }
-    }
+    const product = products[id - 1];
+    const url = 'https://t.me/share/url?url=' + encodeURIComponent(product.url) + '&text=' + encodeURIComponent(product.name);
+    window.open(url, '_blank');
   }
 }
 
