@@ -21,8 +21,10 @@
     Rating: {{ product.rating | number:'1.2' }} / 5.00
   </p>
 
+
   <button type="button" (click)="share(product.id)">
-    Share
+    <i class="material-icons">share</i>
+    Share in Telegram
   </button>
 
 </div>
