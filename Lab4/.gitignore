@@ -1,3 +1,2 @@
-angular
-!angular/Dockerfile
-!angular/src
+angular/.angular
+angular/node_modules
