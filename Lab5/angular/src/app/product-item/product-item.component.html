@@ -28,5 +28,9 @@
     <i class="material-icons">remove</i>
     Remove item
   </button>
+  <button type="button" (click)="toggleLike(item)">
+    <i class="material-icons">favorite</i>
+    <span>{{ item.likes }}</span>
+  </button>
 
 </div>
