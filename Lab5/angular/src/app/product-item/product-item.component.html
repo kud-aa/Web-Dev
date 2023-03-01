@@ -1,4 +1,4 @@
-<div *ngFor="let item of items">
+<div *ngFor="let item of items" class="item">
 
   <h3>
     <a [title]="item.name + ' details'" [href]="item.url" target="_blank">
@@ -23,6 +23,10 @@
   <button type="button" (click)="share(item.id)">
     <i class="material-icons">share</i>
     Share in Telegram
+  </button>
+  <button type="button" (click)="remove.emit(item)">
+    <i class="material-icons">remove</i>
+    Remove item
   </button>
 
 </div>

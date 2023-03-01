@@ -18,9 +18,9 @@ export class ProductListComponent {
   }
 
   removeItem(item:any) {
-    const index = this.selectedCategory.products.indexOf(item);
+    const index = this.selectedCategory.items.indexOf(item);
     if (index !== -1) {
-      this.selectedCategory.products.splice(index, 1);
+      this.selectedCategory.items.splice(index, 1);
     }
   }
 
