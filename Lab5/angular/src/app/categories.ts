@@ -50,8 +50,24 @@ export const categories = [
         Рекомендуемая мощность блока питания: 700 Вт',
         image_url: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hca/h48/67678653612062/inno3d-geforce-rtx-4070-ti-x3-n407t3-126x-186148n-12-gb-108358652-1.jpg',
         rating: 1
+      },
+
+      {
+        id: 8,
+        url: 'https://kaspi.kz/shop/p/inno3d-geforce-rtx-4070-ti-x3-n407t3-126x-186148n-12-gb-108358652/?c=750000000#!/item',
+        name: 'Видеокарта Inno3D GeForce RTX 4070 Ti X3 N407T3-126X-186148N 12 ГБ',
+        price: 431619,
+        description: 'Серия: GeForce RTX 40 Series \n \
+        Частота графического процессора: 2610 МГц \n \
+        Объем видеопамяти: 12 ГБ \n \
+        Тип видеопамяти: GDDR6X \n \
+        Длина видеокарты: 297 мм \n \
+        Рекомендуемая мощность блока питания: 700 Вт',
+        image_url: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hca/h48/67678653612062/inno3d-geforce-rtx-4070-ti-x3-n407t3-126x-186148n-12-gb-108358652-1.jpg',
+        rating: 1
       }
-    ]
+    ],
+
   },
 
   {
@@ -164,6 +180,66 @@ export const categories = [
         Тактовая частота: 5600 Мгц',
         image_url: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hd9/hd7/51007707086878/kingston-kf556c40bbk2-16-16-gb-104990698-1.jpg',
         rating: 4.7
+      },
+
+      {
+        id: 11,
+        url: 'https://kaspi.kz/shop/p/kingston-kf564c32rsak2-32-32-gb-106429911/?c=750000000#!/item',
+        name: 'Оперативная память Kingston KF564C32RSAK2-32 32 Гб',
+        price: 110720,
+        description: '    Тип памяти: DDR5 \n \
+        Форм-фактор: DIMM \n \
+        Количество модулей в комплекте: 2 \n \
+        Тактовая частота: 6400 МГц',
+        image_url: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h9f/h7c/62426550960158/kingston-kf564c32rsak2-32-32-gb-106429911-1.jpg',
+        rating: 1
+      },
+
+    ]
+  },
+
+  {
+    id: 4,
+    name: 'SSD',
+    items: [
+      {
+        id: 1,
+        url: 'https://kaspi.kz/shop/p/transcend-esd270c-ts1tesd270c-1tb-chernyi-102562591/?c=750000000#!/item',
+        name: 'Внешний накопитель Transcend ESD270C TS1TESD270C 1TB',
+        price: 66990,
+        description: 'Тип: внешний SSD',
+        image_url: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h17/hab/49003550113822/transcend-esd270c-ts1tesd270c-1tb-cernyj-102562591-1.jpg',
+        rating: 4.7
+      },
+
+      {
+        id: 2,
+        url: 'https://kaspi.kz/shop/p/samsung-portable-t7-mu-pc1t0t-ww-1tb-seryi-102182806/?c=750000000#!/item',
+        name: 'Внешний накопитель Samsung Portable T7 MU-PC1T0T/WW 1TB серый',
+        price: 79500,
+        description: 'Емкость: 1000 ГБ',
+        image_url: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h67/h36/45101875855390/samsung-portable-t7-mu-pc1t0t-ww-1tb-seryj-102182806-1-Container.jpg',
+        rating: 4.6
+      },
+
+      {
+        id: 3,
+        url: 'https://kaspi.kz/shop/p/kingston-sxs2000-1000g-1tb-103190379/?c=750000000#!/item',
+        name: 'Внешний накопитель Kingston SXS2000/1000G 1TB',
+        price: 66990,
+        description: 'Форм-фактор: 1.8',
+        image_url: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h97/h65/47791555248158/kingston-sxs2000-1000g-1tb-103190379-1.jpg',
+        rating: 3.7
+      },
+
+      {
+        id: 4,
+        url: 'https://kaspi.kz/shop/p/hikvision-hs-essd-t200n--256g-256-gb-103420404/?c=750000000#!/item',
+        name: 'Внешний накопитель Hikvision HS-ESSD-T200N/-256G 256 ГБ',
+        price: 70000,
+        description: 'Интерфейсы: USB 3.2 Gen 2',
+        image_url: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hf0/hd6/48225514913822/hikvision-hs-essd-t200n-256g-256-gb-103420404-1.jpg',
+        rating: 2.5
       }
     ]
   }
