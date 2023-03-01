@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { products } from '../products';
 
@@ -9,7 +9,7 @@ import { products } from '../products';
 })
 
 export class ProductItemComponent {
-  products = products;
+  @Input() products:any;
 
   share(id:number) {
     const product = products[id - 1];

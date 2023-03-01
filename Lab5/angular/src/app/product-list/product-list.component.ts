@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { products } from '../products';
+import { categories } from '../categories';
 
 @Component({
   selector: 'app-product-list',
@@ -8,17 +8,11 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  products = products;
+  categories = categories;
 
-  share(id:number) {
-    const product = products[id - 1];
-    const url = 'https://t.me/share/url?url=' + encodeURIComponent(product.url) + '&text=' + encodeURIComponent(product.name);
-    window.open(url, '_blank');
+  selectedCategory:any;
+
+  selectCategory(category:any) {
+    this.selectedCategory = category;
   }
 }
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
