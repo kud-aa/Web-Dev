@@ -1,26 +1,26 @@
-<div *ngFor="let product of products">
+<div *ngFor="let item of items">
 
   <h3>
-    <a [title]="product.name + ' details'" [href]="product.url" target="_blank">
-      {{ product.name }}
+    <a [title]="item.name + ' details'" [href]="item.url" target="_blank">
+      {{ item.name }}
     </a>
   </h3>
-  <img src={{product.image_url}} alt="">
+  <img src={{item.image_url}} alt="">
 
-  <p *ngIf="product.description">
-    Description: {{ product.description }}
+  <p *ngIf="item.description">
+    Description: {{ item.description }}
   </p>
 
-  <p *ngIf="product.price">
-    Price: {{ product.price | number:'1.0-2' }} ₸
+  <p *ngIf="item.price">
+    Price: {{ item.price | number:'1.0-2' }} ₸
   </p>
 
-  <p *ngIf="product.rating">
-    Rating: {{ product.rating | number:'1.2' }} / 5.00
+  <p *ngIf="item.rating">
+    Rating: {{ item.rating | number:'1.2' }} / 5.00
   </p>
 
 
-  <button type="button" (click)="share(product.id)">
+  <button type="button" (click)="share(item.id)">
     <i class="material-icons">share</i>
     Share in Telegram
   </button>

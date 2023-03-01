@@ -1,6 +1,4 @@
-import { Component, Input } from '@angular/core';
-
-import { products } from '../products';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product-item',
@@ -9,11 +7,16 @@ import { products } from '../products';
 })
 
 export class ProductItemComponent {
-  @Input() products:any;
+  @Input() items:any;
+  @Output() remove = new EventEmitter();
+
+  removeItem(item:any) {
+    this.remove.emit(item);
+  }
 
   share(id:number) {
-    const product = products[id - 1];
-    const url = 'https://t.me/share/url?url=' + encodeURIComponent(product.url) + '&text=' + encodeURIComponent(product.name);
+    const item = this.items[id - 1];
+    const url = 'https://t.me/share/url?url=' + encodeURIComponent(item.url) + '&text=' + encodeURIComponent(item.name);
     window.open(url, '_blank');
   }
 }

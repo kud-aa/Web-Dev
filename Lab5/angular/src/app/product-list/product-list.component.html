@@ -1,8 +1,14 @@
 <h1>Categories</h1>
 
-<ul>
-  <li *ngFor="let category of categories" (click)="selectCategory(category)">
-    {{ category.name }}
-  </li>
-</ul>
-<app-product-item [products]="selectedCategory?.products"></app-product-item>
+<div class="dropdown" [class.open]="dropdownOpen">
+  <button class="btn btn-default dropdown-toggle" type="button" (click)="toggleDropdown()">
+    {{ selectedCategory?.name || 'Select Category' }}
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li *ngFor="let category of categories" (click)="selectCategory(category); toggleDropdown()">
+      {{ category.name }}
+    </li>
+  </ul>
+</div>
+<app-product-item [items]="selectedCategory?.items" (remove)="removeItem($event)"></app-product-item>
