@@ -2,7 +2,9 @@
 
 <ul>
   <li *ngFor="let album of albums">
-    {{ album.title }}
+    <div class="album-title">
+      {{ album.title }}
+    </div>
     <button (click)="deleteAlbum(album)">Delete</button>
     <a routerLink="/albums/{{ album.id }}">Details</a>
   </li>
