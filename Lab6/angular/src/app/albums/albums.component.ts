@@ -19,6 +19,6 @@ export class AlbumsComponent implements OnInit {
   }
 
   deleteAlbum(album: any) {
-    // Implement delete operation
+    this.albums = this.albums.filter(a => a !== album);
   }
 }
