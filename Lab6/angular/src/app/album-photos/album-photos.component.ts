@@ -7,16 +7,18 @@ import { AlbumsService } from '../albums.service';
   templateUrl: './album-photos.component.html',
   styleUrls: ['./album-photos.component.css']
 })
+
 export class AlbumPhotosComponent implements OnInit {
-  photos: any[];
+  photos: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private albumsService: AlbumsService
   ) { }
 
-  ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get('id');
+  ngOnInit(): void {
+    //const id = +this.route.snapshot.paramMap.get('id');
+    const id = 3;
     this.albumsService.getPhotos(id).subscribe(photos => {
       this.photos = photos;
     });
