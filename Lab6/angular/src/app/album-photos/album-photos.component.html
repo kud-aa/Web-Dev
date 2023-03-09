@@ -1,0 +1,7 @@
+<h2>Album Photos</h2>
+
+<div *ngIf="photos">
+  <img *ngFor="let photo of photos" [src]="photo.thumbnailUrl">
+</div>
+
+<button routerLink="/albums/{{ photos[0]?.albumId }}">Back</button>

@@ -4,7 +4,7 @@ services:
       context: angular
       target: builder
     ports:
-      - 4201:4200
+      - 4202:4200
     volumes:
       - ./angular:/project
       - /project/node_modules

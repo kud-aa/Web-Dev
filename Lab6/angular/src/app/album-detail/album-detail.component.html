@@ -1,0 +1,13 @@
+<h2>Album Details</h2>
+
+<div *ngIf="album">
+  <p>Album ID: {{ album.id }}</p>
+  <p>
+    <span *ngIf="!isEditing">{{ album.title }}</span>
+    <input *ngIf="isEditing" [(ngModel)]="album.title">
+  </p>
+  <button *ngIf="!isEditing" (click)="editAlbum()">Edit</button>
+  <button *ngIf="isEditing" (click)="saveAlbum()">Save</button>
+  <button *ngIf="isEditing" (click)="cancelEdit()">Cancel</button>
+  <button (click)="gotoPhotos()">Photos</button>
+</div>

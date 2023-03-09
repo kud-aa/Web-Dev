@@ -1,11 +1,9 @@
-<app-top-bar></app-top-bar>
+<h1>Angular Album</h1>
 
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+<nav>
+  <a routerLink="/home">Home</a>
+  <a routerLink="/about">About</a>
+  <a routerLink="/albums">Albums</a>
+</nav>
 
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->
+<router-outlet></router-outlet>
