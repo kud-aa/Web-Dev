@@ -11,8 +11,8 @@ class Product(models.Model):
     price = models.FloatField()
     description = models.TextField()
     count = models.IntegerField()
-    is_active = models.BooleanField(default=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    is_active = models.BooleanField()
+    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

@@ -1,26 +1,89 @@
-from rest_framework import generics
-from .models import Product, Category
-from .serializers import ProductSerializer, CategorySerializer
+from django.http import JsonResponse
+from .models import Category, Product
 
-class ProductList(generics.ListCreateAPIView):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
+def categories(request):
+    categories = Category.objects.all()
+    result = []
+    for category in categories:
+        products = []
+        for product in category.products.all():
+            products.append({
+                'id': product.id,
+                'url': f'/api/products/{product.id}/',
+                'name': product.name,
+                'price': product.price,
+                'description': product.description,
+                'rating': product.rating,
+            })
+        result.append({
+            'id': category.id,
+            'name': category.name,
+            'items': products,
+        })
+    return JsonResponse(result, safe=False)
 
-class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
+def category(request, id):
+    category = Category.objects.get(id=id)
+    products = []
+    for product in category.products.all():
+        products.append({
+            'id': product.id,
+            'url': f'/api/products/{product.id}/',
+            'name': product.name,
+            'price': product.price,
+            'description': product.description,
+            'rating': product.rating,
+        })
+    result = {
+        'id': category.id,
+        'name': category.name,
+        'items': products,
+    }
+    return JsonResponse(result)
 
-class CategoryList(generics.ListCreateAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+def products(request):
+    products = Product.objects.all()
+    result = []
+    for product in products:
+        result.append({
+            'id': product.id,
+            'url': f'/api/products/{product.id}/',
+            'name': product.name,
+            'price': product.price,
+            'description': product.description,
+            'rating': product.rating,
+            'category': product.category.id,
+        })
+    return JsonResponse(result, safe=False)
 
-class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+def product(request, id):
+    product = Product.objects.get(id=id)
+    result = {
+        'id': product.id,
+        'name': product.name,
+        'price': product.price,
+        'description': product.description,
+        'rating': product.rating,
+        'category': product.category.id,
+    }
+    return JsonResponse(result)
 
-class CategoryProducts(generics.ListAPIView):
-    serializer_class = ProductSerializer
-
-    def get_queryset(self):
-        category = generics.get_object_or_404(Category, pk=self.kwargs['pk'])
-        return Product.objects.filter(category=category)
+def products_by_category(request, pk):
+    category = Category.objects.get(pk=pk)
+    products = category.products.all()
+    products_list = []
+    for product in products:
+        products_list.append({
+            'id': product.id,
+            'url': f'/api/products/{product.id}/',
+            'name': product.name,
+            'price': product.price,
+            'description': product.description,
+            'rating': product.rating,
+        })
+    result = {
+        'id': category.id,
+        'name': category.name,
+        'items': products_list,
+    }
+    return JsonResponse(result)
