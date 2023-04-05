@@ -1,0 +1,31 @@
+version: '3.7'
+name: lab8_web_dev
+
+services:
+  angular:
+    build:
+      context: angular
+      target: builder
+    networks:
+      - client-side
+    ports:
+      - 4200:4200
+    volumes:
+      - ./angular:/project
+      - /project/node_modules
+
+  django: 
+    build:
+      context: django
+      target: builder
+    networks:
+      - client-side
+      - server-side
+    ports: 
+      - 8000:8000
+    volumes:
+      - ./django:/app
+
+networks:
+  client-side: {}
+  server-side: {}
