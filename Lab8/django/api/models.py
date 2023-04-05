@@ -14,6 +14,7 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     price = models.FloatField()
     description = models.TextField()
+    image_url = models.CharField(max_length=255)
     rating = models.FloatField()
     count = models.IntegerField()
     is_active = models.BooleanField()

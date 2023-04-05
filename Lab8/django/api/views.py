@@ -13,6 +13,7 @@ def categories(request):
                 'name': product.name,
                 'price': product.price,
                 'description': product.description,
+                'image_url': product.image_url,
                 'rating': product.rating,
             })
         result.append({
@@ -32,6 +33,7 @@ def category(request, id):
             'name': product.name,
             'price': product.price,
             'description': product.description,
+            'image_url': product.image_url,
             'rating': product.rating,
         })
     result = {
@@ -51,6 +53,7 @@ def products(request):
             'name': product.name,
             'price': product.price,
             'description': product.description,
+            'image_url': product.image_url,
             'rating': product.rating,
             'category': product.category.id,
         })
@@ -63,13 +66,14 @@ def product(request, id):
         'name': product.name,
         'price': product.price,
         'description': product.description,
+        'image_url': product.image_url,
         'rating': product.rating,
         'category': product.category.id,
     }
     return JsonResponse(result)
 
-def products_by_category(request, pk):
-    category = Category.objects.get(pk=pk)
+def products_by_category(request, id):
+    category = Category.objects.get(id=id)
     products = category.products.all()
     products_list = []
     for product in products:
@@ -79,6 +83,7 @@ def products_by_category(request, pk):
             'name': product.name,
             'price': product.price,
             'description': product.description,
+            'image_url': product.image_url,
             'rating': product.rating,
         })
     result = {
