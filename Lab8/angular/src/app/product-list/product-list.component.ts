@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import { categories } from '../categories';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-product-list',
@@ -8,10 +7,18 @@ import { categories } from '../categories';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  categories = categories;
+  categories:any = [];
 
   selectedCategory:any;
   dropdownOpen = false;
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.http.get('http://angular:8000/api/categories').subscribe(data => {
+      this.categories = data;
+    });
+  }
 
   selectCategory(category:any) {
     this.selectedCategory = category;
