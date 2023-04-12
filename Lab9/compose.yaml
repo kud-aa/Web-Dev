@@ -1,0 +1,12 @@
+version: '3.7'
+name: lab8_web_dev
+
+services:
+  django: 
+    build:
+      context: django
+      target: builder
+    ports: 
+      - 8000:8000
+    volumes:
+      - ./django:/app
