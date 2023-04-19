@@ -1,0 +1,19 @@
+services:
+  angular:
+    build:
+      context: angular
+      target: builder
+    ports:
+      - 4202:4200
+    volumes:
+      - ./angular:/project
+      - /project/node_modules
+
+  django: 
+    build:
+      context: django
+      target: builder
+    ports: 
+      - 8000:8000
+    volumes:
+      - ./django:/app
